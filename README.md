@@ -2,11 +2,22 @@
 
 A Visual Studio Code extension that makes it easy to convert SVG files to PNG format. Perfect for developers and designers who need to quickly convert vector graphics to raster format.
 
+## Demo Videos
+
+### Single File Conversion
+
+https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/one_image_converter.mov
+
+### Batch Folder Conversion
+
+https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/malti_image_converter.mov
+
 ![Feature Overview - Convert SVG files to PNG with ease](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/feature-overview.png)
 
 ## Features
 
 ✨ **Simple Conversion**
+
 - Convert SVG files to PNG with just a right-click
 - Batch convert all SVG files in a folder
 - Preview option after conversion
@@ -14,6 +25,7 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 ![Context Menu - Easy access to conversion options](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/context-menu.png)
 
 🎨 **Customization Options**
+
 - Specify custom output dimensions
 - Adjust PNG quality (0.1 to 1.0)
 - Choose custom output location or set default path
@@ -21,6 +33,7 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 ![Settings - Configure quality and default output path](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/settings.png)
 
 ⚡ **Fast and Efficient**
+
 - Built with the high-performance Sharp library
 - Minimal memory usage
 - Supports batch processing
@@ -35,6 +48,7 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 ## Usage
 
 ### Single File Conversion
+
 1. Right-click on an SVG file in the Explorer
 2. Select "Convert SVG to PNG"
 3. Choose output folder (if no default set)
@@ -42,12 +56,14 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 5. PNG file will be created in the selected location
 
 ### Batch Conversion
+
 1. Right-click on a folder containing SVG files
 2. Select "Convert SVG to PNG"
 3. Choose output folder
 4. All SVG files will be converted while maintaining the original file names
 
 ### From Command Palette
+
 1. Press `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS)
 2. Type "Convert SVG to PNG"
 3. Press Enter
@@ -58,10 +74,11 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 This extension contributes the following settings:
 
 * `svgToPngConverter.quality`: Quality of the PNG output (0.1 to 1.0)
+
   - Default: 1.0
   - Higher values mean better quality but larger file size
-
 * `svgToPngConverter.defaultOutputPath`: Default output path for converted PNG files
+
   - Can be absolute or relative to workspace
   - Leave empty to choose location each time
 
@@ -79,6 +96,7 @@ This extension contributes the following settings:
 ## Troubleshooting
 
 ### Module not found error
+
 If you encounter a "Cannot find module 'sharp'" error:
 
 1. Uninstall the extension
@@ -96,6 +114,7 @@ If the problem persists:
 3. Restart VS Code
 
 ### Platform-specific issues
+
 This extension uses the `sharp` module which requires platform-specific binaries. If you encounter any issues:
 
 1. Make sure you have Node.js 14.0.0 or higher installed
@@ -107,22 +126,26 @@ For more help, please visit our [GitHub repository](https://github.com/fumifumi0
 ## Release Notes
 
 ### 0.1.4 (2024-03-19)
+
 - Improved platform compatibility
 - Added better error handling for module installation
 - Updated troubleshooting documentation
 
 ### 0.1.2 (2024-03-19)
+
 - Fixed installation issues with sharp module
 - Added postinstall script for better compatibility
 - Updated troubleshooting guide
 
 ### 0.1.1 (2024-03-19)
+
 - Added extension icon
 - Improved documentation with screenshots
 - Enhanced marketplace presentation
 - Added keywords for better discoverability
 
 ### 0.1.0 (2024-03-18)
+
 - Initial release
 - Basic SVG to PNG conversion
 - Folder batch processing

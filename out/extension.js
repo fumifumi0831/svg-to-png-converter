@@ -22,16 +22,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deactivate = exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
-const sharp_1 = __importDefault(require("sharp"));
 const child_process_1 = require("child_process");
+let sharp;
 async function ensureSharpInstalled() {
     const extensionDir = path.dirname(__dirname);
     const nodeModulesDir = path.join(extensionDir, 'node_modules');
@@ -51,7 +48,7 @@ async function ensureSharpInstalled() {
             else {
                 packageJson = {
                     name: "svg-to-png-converter",
-                    version: "0.1.7",
+                    version: "0.1.8",
                     dependencies: {}
                 };
             }
@@ -72,6 +69,14 @@ async function ensureSharpInstalled() {
             vscode.window.showErrorMessage(`Failed to install sharp module: ${error.message}`);
             throw error;
         }
+    }
+    // sharpモジュールを動的にインポート
+    try {
+        sharp = require(sharpPath);
+    }
+    catch (error) {
+        vscode.window.showErrorMessage(`Failed to load sharp module: ${error.message}`);
+        throw error;
     }
 }
 async function activate(context) {
@@ -197,7 +202,7 @@ async function convertSvgToPng(svgFilePath) {
         const width = inputWidth ? parseInt(inputWidth) : undefined;
         const height = inputHeight ? parseInt(inputHeight) : undefined;
         // Convert SVG to PNG using sharp
-        let sharpInstance = (0, sharp_1.default)(svgContent);
+        let sharpInstance = sharp(svgContent);
         if (width || height) {
             sharpInstance = sharpInstance.resize(width, height);
         }
