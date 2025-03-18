@@ -31,7 +31,57 @@ const vscode = __importStar(require("vscode"));
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const sharp_1 = __importDefault(require("sharp"));
-function activate(context) {
+const child_process_1 = require("child_process");
+async function ensureSharpInstalled() {
+    const extensionDir = path.dirname(__dirname);
+    const nodeModulesDir = path.join(extensionDir, 'node_modules');
+    const sharpPath = path.join(nodeModulesDir, 'sharp');
+    if (!fs.existsSync(sharpPath)) {
+        try {
+            // node_modulesディレクトリが存在しない場合は作成
+            if (!fs.existsSync(nodeModulesDir)) {
+                fs.mkdirSync(nodeModulesDir, { recursive: true });
+            }
+            // package.jsonの更新
+            const packageJsonPath = path.join(extensionDir, 'package.json');
+            let packageJson;
+            if (fs.existsSync(packageJsonPath)) {
+                packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+            }
+            else {
+                packageJson = {
+                    name: "svg-to-png-converter",
+                    version: "0.1.7",
+                    dependencies: {}
+                };
+            }
+            // sharpモジュールの依存関係を追加
+            packageJson.dependencies = packageJson.dependencies || {};
+            packageJson.dependencies.sharp = "^0.32.6";
+            fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+            // sharpモジュールのインストール
+            (0, child_process_1.execSync)('npm install sharp --save', {
+                cwd: extensionDir,
+                stdio: 'inherit'
+            });
+            if (!fs.existsSync(sharpPath)) {
+                throw new Error('Failed to install sharp module');
+            }
+        }
+        catch (error) {
+            vscode.window.showErrorMessage(`Failed to install sharp module: ${error.message}`);
+            throw error;
+        }
+    }
+}
+async function activate(context) {
+    try {
+        await ensureSharpInstalled();
+    }
+    catch (error) {
+        console.error('Failed to ensure sharp is installed:', error.message);
+        return;
+    }
     console.log('SVG to PNG Converter extension is now active');
     // Register the command
     const command = 'svg-to-png-converter.convertToPng';

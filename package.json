@@ -2,7 +2,7 @@
   "name": "svg-to-png-converter",
   "displayName": "SVG to PNG Converter",
   "description": "Convert SVG files to PNG and save them to a specified location",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "publisher": "fumifumi0831",
   "icon": "images/icon.png",
   "repository": {
