@@ -2,41 +2,33 @@
 
 A Visual Studio Code extension that makes it easy to convert SVG files to PNG format. Perfect for developers and designers who need to quickly convert vector graphics to raster format.
 
-## Demo Videos
-
-### Single File Conversion
-
-https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/one_image_converter.mov
-
-### Batch Folder Conversion
-
-https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/malti_image_converter.mov
-
-![Feature Overview - Convert SVG files to PNG with ease](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/feature-overview.png)
+![Feature Overview](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/feature-overview.png)
 
 ## Features
 
-✨ **Simple Conversion**
+### 🎯 Simple Conversion
 
 - Convert SVG files to PNG with just a right-click
 - Batch convert all SVG files in a folder
-- Preview option after conversion
+- Preview option before conversion
 
-![Context Menu - Easy access to conversion options](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/context-menu.png)
+![Single File Conversion Demo](https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/one_image_converter.gif)
 
-🎨 **Customization Options**
+### 🎨 Customization Options
 
-- Specify custom output dimensions
+- Specify output dimensions
 - Adjust PNG quality (0.1 to 1.0)
-- Choose custom output location or set default path
+- Set default output location
 
-![Settings - Configure quality and default output path](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/settings.png)
+![Settings](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/settings.png)
 
-⚡ **Fast and Efficient**
+### ⚡ Fast and Efficient
 
-- Built with the high-performance Sharp library
+- Built with high-performance Sharp library
 - Minimal memory usage
-- Supports batch processing
+- Batch processing support
+
+![Batch Conversion Demo](https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/malti_image_converter.gif)
 
 ## Installation
 
@@ -71,8 +63,6 @@ https://github.com/fumifumi0831/svg-to-png-converter/raw/main/images/malti_image
 
 ## Extension Settings
 
-This extension contributes the following settings:
-
 * `svgToPngConverter.quality`: Quality of the PNG output (0.1 to 1.0)
 
   - Default: 1.0
@@ -87,12 +77,6 @@ This extension contributes the following settings:
 - Visual Studio Code 1.60.0 or higher
 - No additional software required - all dependencies are included
 
-## Known Issues
-
-- Very large SVG files may take longer to process
-- Some complex SVG filters might not render exactly as in vector format
-- Files with external references may not convert correctly
-
 ## Troubleshooting
 
 ### Module not found error
@@ -105,55 +89,38 @@ If you encounter a "Cannot find module 'sharp'" error:
 
 If the problem persists:
 
-1. Open VS Code terminal
-2. Run the following commands:
-   ```bash
-   cd ~/.vscode/extensions/fumifumi0831.svg-to-png-converter-*
-   npm install sharp --save
-   ```
-3. Restart VS Code
+```bash
+cd ~/.vscode/extensions/fumifumi0831.svg-to-png-converter-*
+npm install sharp --save
+```
+
+Then restart VS Code.
 
 ### Platform-specific issues
 
-This extension uses the `sharp` module which requires platform-specific binaries. If you encounter any issues:
+- Ensure Node.js 14.0.0 or higher is installed
+- Check write permissions in the extension directory
+- Windows users need Visual C++ runtime installed
 
-1. Make sure you have Node.js 14.0.0 or higher installed
-2. Check if you have proper write permissions in the extension directory
-3. If using Windows, make sure you have the necessary Visual C++ runtime installed
+## Known Issues
 
-For more help, please visit our [GitHub repository](https://github.com/fumifumi0831/svg-to-png-converter/issues).
+- Large SVG files may take longer to process
+- Some complex SVG filters might not render exactly as in vector format
+- Files with external references may not convert correctly
 
 ## Release Notes
 
-### 0.1.4 (2024-03-19)
+### 1.0.0 (2024-03-18)
 
-- Improved platform compatibility
-- Added better error handling for module installation
-- Updated troubleshooting documentation
+- Initial stable release
+- Fast conversion engine
+- Batch processing support
+- Preview functionality
+- Customizable settings
 
-### 0.1.2 (2024-03-19)
+## Feedback
 
-- Fixed installation issues with sharp module
-- Added postinstall script for better compatibility
-- Updated troubleshooting guide
-
-### 0.1.1 (2024-03-19)
-
-- Added extension icon
-- Improved documentation with screenshots
-- Enhanced marketplace presentation
-- Added keywords for better discoverability
-
-### 0.1.0 (2024-03-18)
-
-- Initial release
-- Basic SVG to PNG conversion
-- Folder batch processing
-- Quality and output path settings
-
-## Contributing
-
-Found a bug or have a feature request? Please open an issue on our [GitHub repository](https://github.com/fumifumi0831/svg-to-png-converter).
+Found a bug or have a feature request? Please open an issue on our [GitHub repository](https://github.com/fumifumi0831/svg-to-png-converter/issues).
 
 ## License
 
