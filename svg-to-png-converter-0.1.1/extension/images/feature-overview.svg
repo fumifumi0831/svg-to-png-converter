@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- VSCode風の背景 -->
+    <rect width="800" height="400" fill="#1E1E1E"/>
+    
+    <!-- エクスプローラーパネル -->
+    <g transform="translate(20, 20)">
+        <rect width="200" height="360" fill="#252526"/>
+        <text x="10" y="30" fill="#CCCCCC" font-family="Arial">EXPLORER</text>
+        
+        <!-- ファイルリスト -->
+        <g transform="translate(10, 50)">
+            <rect width="180" height="20" fill="#37373D"/>
+            <text x="5" y="15" fill="#CCCCCC" font-family="monospace">📄 logo.svg</text>
+        </g>
+        <g transform="translate(10, 75)">
+            <rect width="180" height="20" fill="#2D2D2D"/>
+            <text x="5" y="15" fill="#CCCCCC" font-family="monospace">📄 icon.svg</text>
+        </g>
+    </g>
+    
+    <!-- コンテキストメニュー -->
+    <g transform="translate(150, 70)">
+        <rect width="200" height="100" fill="#2D2D2D" rx="5"/>
+        <text x="10" y="30" fill="#CCCCCC" font-family="Arial">Open</text>
+        <text x="10" y="55" fill="#CCCCCC" font-family="Arial">Copy</text>
+        <text x="10" y="80" fill="#FFFFFF" font-family="Arial">Convert SVG to PNG</text>
+    </g>
+    
+    <!-- 変換結果 -->
+    <g transform="translate(400, 20)">
+        <rect width="360" height="360" fill="#252526"/>
+        <text x="10" y="30" fill="#CCCCCC" font-family="Arial">OUTPUT: logo.png</text>
+        
+        <!-- プレビュー領域 -->
+        <rect x="10" y="50" width="340" height="290" fill="#1E1E1E"/>
+        <text x="20" y="180" fill="#4CAF50" font-family="Arial" font-size="24">Conversion Complete!</text>
+    </g>
+</svg> 
