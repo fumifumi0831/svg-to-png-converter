@@ -78,17 +78,38 @@ This extension contributes the following settings:
 
 ## Troubleshooting
 
-If you encounter any issues:
-1. If the extension is not responding:
-   - Uninstall the extension
-   - Run `code --install-extension svg-to-png-converter-0.1.2.vsix` in terminal
-   - Or reinstall from the marketplace and reload VS Code
-2. Check the output dimensions are within reasonable limits
-3. Ensure the SVG file is valid and can be opened in VS Code
-4. Verify you have write permissions in the output directory
-5. Try adjusting the quality setting if the output file is too large
+### Module not found error
+If you encounter a "Cannot find module 'sharp'" error:
+
+1. Uninstall the extension
+2. Restart VS Code
+3. Install the extension again
+
+If the problem persists:
+
+1. Open VS Code terminal
+2. Run the following commands:
+   ```bash
+   cd ~/.vscode/extensions/fumifumi0831.svg-to-png-converter-*
+   npm install sharp --save
+   ```
+3. Restart VS Code
+
+### Platform-specific issues
+This extension uses the `sharp` module which requires platform-specific binaries. If you encounter any issues:
+
+1. Make sure you have Node.js 14.0.0 or higher installed
+2. Check if you have proper write permissions in the extension directory
+3. If using Windows, make sure you have the necessary Visual C++ runtime installed
+
+For more help, please visit our [GitHub repository](https://github.com/fumifumi0831/svg-to-png-converter/issues).
 
 ## Release Notes
+
+### 0.1.4 (2024-03-19)
+- Improved platform compatibility
+- Added better error handling for module installation
+- Updated troubleshooting documentation
 
 ### 0.1.2 (2024-03-19)
 - Fixed installation issues with sharp module
