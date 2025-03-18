@@ -2,7 +2,7 @@
 
 A Visual Studio Code extension that makes it easy to convert SVG files to PNG format. Perfect for developers and designers who need to quickly convert vector graphics to raster format.
 
-![Feature Overview - Convert SVG files to PNG with ease](images/feature-overview.png)
+![Feature Overview - Convert SVG files to PNG with ease](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/feature-overview.png)
 
 ## Features
 
@@ -11,14 +11,14 @@ A Visual Studio Code extension that makes it easy to convert SVG files to PNG fo
 - Batch convert all SVG files in a folder
 - Preview option after conversion
 
-![Context Menu - Easy access to conversion options](images/context-menu.png)
+![Context Menu - Easy access to conversion options](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/context-menu.png)
 
 🎨 **Customization Options**
 - Specify custom output dimensions
 - Adjust PNG quality (0.1 to 1.0)
 - Choose custom output location or set default path
 
-![Settings - Configure quality and default output path](images/settings.png)
+![Settings - Configure quality and default output path](https://raw.githubusercontent.com/fumifumi0831/svg-to-png-converter/main/images/settings.png)
 
 ⚡ **Fast and Efficient**
 - Built with the high-performance Sharp library

@@ -33,7 +33,9 @@ const path = __importStar(require("path"));
 const sharp_1 = __importDefault(require("sharp"));
 function activate(context) {
     console.log('SVG to PNG Converter extension is now active');
-    let disposable = vscode.commands.registerCommand('svg-to-png-converter.convertToPng', async (fileUri) => {
+    // Register the command
+    const command = 'svg-to-png-converter.convertToPng';
+    const commandHandler = async (fileUri) => {
         try {
             // Handle different context menu scenarios
             let filePath;
@@ -84,7 +86,9 @@ function activate(context) {
         catch (error) {
             vscode.window.showErrorMessage(`Error converting SVG to PNG: ${error instanceof Error ? error.message : String(error)}`);
         }
-    });
+    };
+    // Register the command and add it to subscriptions
+    const disposable = vscode.commands.registerCommand(command, commandHandler);
     context.subscriptions.push(disposable);
 }
 exports.activate = activate;

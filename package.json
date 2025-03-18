@@ -22,14 +22,17 @@
     "transform"
   ],
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.60.0",
+    "node": ">=14.0.0"
   },
   "categories": [
     "Other",
     "Formatters"
   ],
   "activationEvents": [
-    "onCommand:svg-to-png-converter.convertToPng"
+    "onCommand:svg-to-png-converter.convertToPng",
+    "onLanguage:svg",
+    "workspaceContains:*.svg"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -81,7 +84,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
-    "postinstall": "npm install sharp"
+    "postinstall": "node ./scripts/install.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
