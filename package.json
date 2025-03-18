@@ -2,7 +2,7 @@
   "name": "svg-to-png-converter",
   "displayName": "SVG to PNG Converter",
   "description": "Convert SVG files to PNG and save them to a specified location",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publisher": "fumifumi0831",
   "icon": "images/icon.png",
   "repository": {
@@ -84,7 +84,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "lint": "eslint src --ext ts",
-    "postinstall": "node ./scripts/install.js"
+    "postinstall": "node ./scripts/install.js",
+    "install-sharp": "node ./scripts/install.js"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
